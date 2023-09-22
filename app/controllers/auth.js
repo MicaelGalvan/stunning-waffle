@@ -2,7 +2,7 @@ const { httpError } = require('../helpers/handleError')
 const { encrypt, compare } = require('../helpers/handleBcrypt')
 const { tokenSign } = require('../helpers/generateToken')
 const userModel = require('../models/user')
-
+ 
 
 const loginCtrl = async (req, res) => {
     try {
