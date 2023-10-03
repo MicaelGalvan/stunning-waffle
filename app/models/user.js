@@ -2,11 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema
 
 const UserSchema = Schema({
-    username: {
-        type: String,
-        required: true,
-        unique: true,
-    },
     firstName: {
         type: String,
         required: true
@@ -29,12 +24,15 @@ const UserSchema = Schema({
         required: true,
         unique: true,
     },
+    //TODO: revisar role
     role: {
-        type: String,
-        required: true,
-    },
-    category: {
-        type: String,
+        type: {
+            type: String,
+            required: true,
+        },
+        permissions: [
+            { type: String }
+        ]
     },
     gender: {
         type: String
@@ -49,12 +47,10 @@ const UserSchema = Schema({
     phone: {
         type: String,
     },
-    medicalHistory: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'medicalHistory'
-        }
-    ],
+    medicalHistory: {
+        type: Schema.Types.ObjectId,
+        ref: 'medicalHistory'
+    },
     specialities: [
         {
             type: Schema.Types.ObjectId,
@@ -62,7 +58,7 @@ const UserSchema = Schema({
         }
     ],
     medicalRegistrationNumber: {
-        type: Number,
+        type: String,
     },
     workdays: [
         {

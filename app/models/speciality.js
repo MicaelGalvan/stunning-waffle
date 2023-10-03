@@ -10,7 +10,7 @@ const SpecialitySchema = new Schema({
         type: Number,
         required: true
     },
-    duration_minutes: {
+    durationMinutes: {
         type: Number,
         required: true
     }

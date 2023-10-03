@@ -12,23 +12,25 @@ const MedicalConsultationSchema = new Schema({
         ref: 'user',
         required: true
     },
-    reason_for_consultation: { type: String },
+    reasonForConsultation: { type: String },
     diagnosis: { type: String },
-    indicated_treatment: { type: String },
+    indicatedTreatment: { type: String },
     prescription: { type: String },
-    consultation_room: { type: String },
+    consultationRoom: { type: String },
     speciality: {
+        //objectid
+        //pepito    
+        //5
+        //15
         type: Schema.Types.ObjectId,
         ref: 'speciality'
     },
     preclinical: { type: String },
-    appointment_date: {
-        type: Date,
-        required: true
+    appointment: {
+        date: { type: Date, },
+        hour: { type: Number },
+        minute: { type: Number },
     },
-    appointment_hour: { type: Number },
-    appointment_minute: { type: Number },
-    duration_minutes: { type: Number },
     notes: { type: String },
     status: { type: String }
 });
