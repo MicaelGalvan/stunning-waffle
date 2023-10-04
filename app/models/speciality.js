@@ -13,6 +13,9 @@ const SpecialitySchema = new Schema({
     durationMinutes: {
         type: Number,
         required: true
+    },
+    status: {
+        type: String,
     }
 });
 

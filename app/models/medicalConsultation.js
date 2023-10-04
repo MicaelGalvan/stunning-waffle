@@ -17,14 +17,7 @@ const MedicalConsultationSchema = new Schema({
     indicatedTreatment: { type: String },
     prescription: { type: String },
     consultationRoom: { type: String },
-    speciality: {
-        //objectid
-        //pepito    
-        //5
-        //15
-        type: Schema.Types.ObjectId,
-        ref: 'speciality'
-    },
+    speciality: { type: Object },
     preclinical: { type: String },
     appointment: {
         date: { type: Date, },
